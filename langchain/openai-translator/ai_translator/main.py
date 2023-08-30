@@ -1,6 +1,7 @@
 import sys
 import os
 
+# 这行代码将当前脚本文件所在的目录添加到Python解释器的搜索路径中，以便能够导入位于该目录下的自定义模块。
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from utils import ArgumentParser, LOG
@@ -13,7 +14,7 @@ if __name__ == "__main__":
 
     # 初始化配置单例
     config = TranslationConfig()
-    config.initialize(args)    
+    config.initialize(args)
 
     # 实例化 PDFTranslator 类，并调用 translate_pdf() 方法
     translator = PDFTranslator(config.model_name)
